@@ -18,10 +18,10 @@
 
 		public static function crear(){
 			$user = R::dispense('user');
-			$user->import($_POST['user'],'name,password');
+			$user->import($_POST['user'],'name,password,rol');
 			$id = R::store($user);
 			$_SESSION['flash'] = 'Usuario creado exitosamente';
-			header('Location:/usuarios');
+			header('Location:/admin/usuarios');
 		}
 
 		public static function editar(){
@@ -35,7 +35,15 @@
 			$user->import($_POST['user'],'name,password');
 			$id = R::store($user);
 			$_SESSION['flash'] = "Usuario $user->name editado exitosamente";
-			header('Location:/usuarios');
+			header('Location:/admin/usuarios');
+		}
+		public static function eliminar(){
+			if(isset($_GET['id'])){				
+				$user = R::load('user', $_GET['id']);
+				$username = $user->name;
+				R::trash($user);
+				//$_SESSION['flash'] = "Usuario $username eliminado exitosamente";
+			}
 		}
 		
 	}

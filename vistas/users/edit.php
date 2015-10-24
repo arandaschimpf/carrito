@@ -1,5 +1,5 @@
 
-<form action="/usuarios/<?= $user->id ?>" method="POST" role="form">
+<form action="/admin/usuarios/<?= $user->id ?>" method="POST" role="form">
 	<legend>Editar usuario</legend>
 
 	<div class="form-group">
@@ -12,5 +12,5 @@
 	</div>
 
 	<button type="submit" class="btn btn-success">Guardar</button>
-	<a href="/usuarios" class="btn btn-primary">Volver</a>
+	<a href="/admin/usuarios" class="btn btn-primary">Volver</a>
 </form>

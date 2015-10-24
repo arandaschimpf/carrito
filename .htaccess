@@ -4,9 +4,12 @@ RewriteEngine on
 
 RewriteBase /
 
-RewriteRule ^usuarios?$ index.php?page=users
-RewriteRule ^usuarios/nuevo?$ index.php?page=users/new
-RewriteRule ^usuarios/([0-9]+)/editar?$ index.php?page=users/editar&id=$1
-RewriteRule ^usuarios/([0-9]+)?$ index.php?page=user&id=$1
+RewriteRule ^admin/usuarios$ index.php?page=users
+RewriteRule ^admin/usuarios/nuevo$ index.php?page=users/new
+RewriteRule ^admin/usuarios/([0-9]+)/editar$ index.php?page=users/editar&id=$1
+RewriteRule ^admin/usuarios/([0-9]+)/eliminar$ index.php?page=user/delete&id=$1
+RewriteRule ^admin/usuarios/([0-9]+)$ index.php?page=user&id=$1
+RewriteRule ^entrar$ index.php?page=entrar
+RewriteRule ^salir$ index.php?page=salir
 
 </IfModule>

@@ -13,4 +13,20 @@
 		$flash = $_SESSION['flash'];
 		unset($_SESSION['flash']);
 	}
+	if(isset($_COOKIE['logged'])){
+		$sec = json_decode($_COOKIE['logged']);
+		$session = R::load('session', $sec->id);
+		if($session != null && $session->name == $sec->name){
+			$logged = R::findOne('user',' name = :name ',
+			           array(':name' => $session->name )
+			         );
+		}
+	}
+	function autorizar(){
+		global $logged;
+		if(!isset($logged) || $logged->rol != 1){
+			$_SESSION['flash'] = "No tiene permiso para acceder a esa sección.";
+			header('Location:/');
+		}
+	}
  ?>
