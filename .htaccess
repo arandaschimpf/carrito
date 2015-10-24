@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine on
+
+RewriteBase /
+
+RewriteRule ^usuarios?$ index.php?page=users
+RewriteRule ^usuarios/nuevo?$ index.php?page=users/new
+RewriteRule ^usuarios/([0-9]+)/editar?$ index.php?page=users/editar&id=$1
+RewriteRule ^usuarios/([0-9]+)?$ index.php?page=user&id=$1
+
+</IfModule>
