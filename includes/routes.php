@@ -38,6 +38,16 @@
 			autorizar();
 			UserController::eliminar();
 			break;
+		case 'POST | user/promover':
+			require 'controladores/users.php';
+			autorizar();
+			UserController::upgrade();
+			break;
+		case 'POST | user/degradar':
+			require 'controladores/users.php';
+			autorizar();
+			UserController::downgrade();
+			break;			
 		case 'GET | entrar':
 			require 'controladores/sessions.php';
 			SessionController::nueva();
@@ -49,6 +59,36 @@
 		case 'GET | salir':
 			require 'controladores/sessions.php';
 			SessionController::destruir();
+			break;
+		case 'GET | productos':
+			autorizar();				
+			require 'controladores/products.php';
+			ProductController::lista();
+			break;
+		case 'GET | productos/nuevo':
+			autorizar();		
+			require 'controladores/products.php';
+			ProductController::nuevo();
+			break;
+		case 'POST | productos':
+			autorizar();		
+			require 'controladores/products.php';
+			ProductController::crear();
+			break;
+		case 'POST | productos/destruir':
+			autorizar();		
+			require 'controladores/products.php';
+			ProductController::destruir();
+			break;
+		case 'GET | productos/editar':
+			autorizar();		
+			require 'controladores/products.php';
+			ProductController::editar();
+			break;
+		case 'POST | producto':
+			autorizar();		
+			require 'controladores/products.php';
+			ProductController::update();
 			break;
 		default:
 			$vista = '404.php';

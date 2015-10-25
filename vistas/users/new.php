@@ -21,7 +21,8 @@
 		<label for="name">Email (opcional): </label>
 		<input type="email" class="form-control" name="user[email]" id="name">
 	</div>
-
-	<button type="submit" class="btn btn-success">Crear</button>
-	<a href="/admin/usuarios" class="btn btn-primary">Volver</a>
+	<div class="text-center">
+		<button type="submit" class="btn btn-success">Crear</button>
+		<a href="/admin/usuarios" class="btn btn-primary">Volver</a>
+	</div>
 </form>

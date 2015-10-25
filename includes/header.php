@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <title>Carrito</title>
         <link rel="stylesheet" href="<?= $BASEURL ?>/cdn/css/bootstrap.min.css">
     </head>
@@ -11,7 +11,6 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -40,6 +39,7 @@
                                 <?php if($logged->rol == 1){ ?>
                                     <li class="dropdown-header">Administrador</li>
                                     <li><a href="/admin/usuarios">Usuarios</a></li>
+                                    <li><a href="/admin/productos">Productos</a></li>
                                     <li role="separator" class="divider"></li>
                                 <?php } ?>
                                 <li><a href="/salir">Cerrar sesión</a></li>

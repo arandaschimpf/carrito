@@ -9,10 +9,10 @@ $(function(){
 		}, 2000);		
 	};
 	ocultarAlertas();
-	$('.eliminarUsuario').click(function (evento) {
+	$('.eliminar').click(function (evento) {
 		evento.preventDefault();
 		var elem = $(this);
-		if(confirm("¿Seguro que desea eliminar este usuario?")){
+		if(confirm("¿Seguro que desea eliminar esto?")){
 			$.ajax({
 				url: $(this).attr('href'),
 				type: 'POST',
@@ -28,5 +28,12 @@ $(function(){
 		}
 	});
 
+	$('.postButton').click(function(evento) {
+		evento.preventDefault();
+		$.post($(this).attr('href'), function(data, textStatus, xhr) {
+			//location.reload();
+			location.href = data;
+		});
+	});
 
 });

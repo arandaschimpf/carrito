@@ -9,7 +9,14 @@ RewriteRule ^admin/usuarios/nuevo$ index.php?page=users/new
 RewriteRule ^admin/usuarios/([0-9]+)/editar$ index.php?page=users/editar&id=$1
 RewriteRule ^admin/usuarios/([0-9]+)/eliminar$ index.php?page=user/delete&id=$1
 RewriteRule ^admin/usuarios/([0-9]+)$ index.php?page=user&id=$1
+RewriteRule ^admin/usuarios/([0-9]+)/promover$ index.php?page=user/promover&id=$1
+RewriteRule ^admin/usuarios/([0-9]+)/degradar$ index.php?page=user/degradar&id=$1
 RewriteRule ^entrar$ index.php?page=entrar
 RewriteRule ^salir$ index.php?page=salir
+RewriteRule ^admin/productos$ index.php?page=productos
+RewriteRule ^admin/productos/nuevo$ index.php?page=productos/nuevo
+RewriteRule ^admin/productos/([0-9]+)/eliminar$ index.php?page=productos/destruir&id=$1
+RewriteRule ^admin/productos/([0-9]+)/editar$ index.php?page=productos/editar&id=$1
+RewriteRule ^admin/productos/([0-9]+)$ index.php?page=producto&id=$1
 
 </IfModule>

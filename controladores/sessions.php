@@ -30,9 +30,10 @@
 					$session = R::dispense('session');
 					$session->name = $user->name;
 					$session->hora = R::isoDateTime();
+					$session->ip = $_SERVER['REMOTE_ADDR'];
 					$id = R::store($session);
 					$session->id = $id;
-					setcookie('logged',json_encode($session->export()));
+					setcookie('logged',json_encode($session->export()), time()*2);
 					header('Location:/');
 				}
 			}
