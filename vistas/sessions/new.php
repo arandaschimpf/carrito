@@ -1,4 +1,4 @@
-<form action="" method="POST" role="form">
+<form action="/entrar" method="POST" role="form">
 	<legend>Autenticarse</legend>
 
 	<div class="form-group">

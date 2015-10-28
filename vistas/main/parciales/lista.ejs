@@ -1,0 +1,38 @@
+<div class='table-responsive'>
+	<div class="nav text-center">
+		<ul class="pagination">
+			<li <%= index === 0 ? 'class="disabled"' : '' %>><a href="#">&laquo;</a></li>
+			<% for (var i = 0; i < Math.ceil(size/10); i++) { %>
+				<li class="pag"><a href="#"><%= i+1 %></a></li>
+			<% } %>
+			<li <%= index === Math.floor(size/10) ? 'class="disabled"' : '' %>><a href="#">&raquo;</a></li>
+			<li title="Recargar"><a href="#" class="recargar"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a></li>
+			<li title="Eliminar completados"><a href="#" class="eliminarCompletados"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></li>
+		</ul>
+		
+	</div>
+	<form class="agregar">
+		<div class="input-group">
+			<input type="text" name="name" id="inputName" class="form-control" placeholder="Agregar">
+			<div class="input-group-btn">
+				<button class="btn btn-success agregar" type="submit">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>				
+				</button>
+			</div>
+		</div>		
+	</form>
+	<table class='table table-hover'>
+		<thead>
+			<tr>
+				<th>Producto</th>
+				<th class="text-right">Opciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% var templatePedido = _.template($('#templatePedido').html()); %>
+			<% _.each(lista, function(element, index, lis){ %>
+				<% print(templatePedido({element: element, user: user})); %>
+			<% }); %>
+		</tbody>
+	</table>
+</div>

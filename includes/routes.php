@@ -6,7 +6,8 @@
 	}
 	switch ($ruta) {
 		case 'GET | /':
-			$vista = 'main.php';
+			require 'controladores/main.php';
+			MainController::main();
 			break;
 		case 'GET | users':
 			require 'controladores/users.php';
@@ -89,6 +90,26 @@
 			autorizar();		
 			require 'controladores/products.php';
 			ProductController::update();
+			break;
+		case 'GET | pedidos':
+			autorizar(false);
+			require 'controladores/requests.php';
+			RequestController::lista();
+			break;
+		case 'POST | pedidos':
+			autorizar(false);
+			require 'controladores/requests.php';
+			RequestController::crear();
+			break;
+		case 'POST | pedido/eliminar':
+			autorizar(false);
+			require 'controladores/requests.php';
+			RequestController::eliminar();
+			break;
+		case 'POST | pedido/comprar':
+			autorizar();
+			require 'controladores/requests.php';
+			RequestController::completar();
 			break;
 		default:
 			$vista = '404.php';

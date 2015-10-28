@@ -20,13 +20,19 @@
 			$logged = R::findOne('user',' name = :name ',
 			           array(':name' => $session->name )
 			         );
+			unset($logged->password);
 		}
 	}
-	function autorizar(){
+	function autorizar($admin = true){
 		global $logged;
-		if(!isset($logged) || $logged->rol != 1){
+		if(!isset($logged)){
 			$_SESSION['flash'] = "No tiene permiso para acceder a esa sección.";
 			header('Location:/');
+		}else{
+			if($admin && $logged->rol != 1){
+				$_SESSION['flash'] = "No tiene permiso para acceder a esa sección.";
+				header('Location:/');
+			}			
 		}
 	}
  ?>

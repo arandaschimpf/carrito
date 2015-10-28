@@ -1,0 +1,13 @@
+<tr data-id="<%= element.id %>" id="req-<%= element.id %>">
+	<td <%= element.listo ? 'style="text-decoration: line-through;"' : '' %>><%= element.name %></td>
+	<td class="text-right">
+		<% if(parseInt(user.rol, 10) === 1){ %>
+			<button class="btn <%= element.listo ? 'btn-default' : 'btn-primary comprar' %> btn-sm" title="Comprado">
+				<span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+			</button>
+		<% } %>
+		<% if(parseInt(user.rol, 10) === 1 || user.id === element.user_id){ %>
+			<button class="btn btn-danger btn-sm eliminar" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+		<% } %>
+	</td>
+</tr>

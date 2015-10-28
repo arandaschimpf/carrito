@@ -26,7 +26,7 @@
                             <input type="text" class="form-control" name="producto" placeholder="Producto">                            
                         </div>
                         <div class="col-xs-3">
-                            <button type="submit" class="btn btn-default">Buscar</button>                            
+                            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>                            
                         </div>
 
                     </div>
@@ -38,11 +38,11 @@
                             <ul class="dropdown-menu">
                                 <?php if($logged->rol == 1){ ?>
                                     <li class="dropdown-header">Administrador</li>
-                                    <li><a href="/admin/usuarios">Usuarios</a></li>
-                                    <li><a href="/admin/productos">Productos</a></li>
+                                    <li><a href="/admin/usuarios"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Usuarios</a></li>
+                                    <li><a href="/admin/productos"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span> Productos</a></li>
                                     <li role="separator" class="divider"></li>
                                 <?php } ?>
-                                <li><a href="/salir">Cerrar sesión</a></li>
+                                <li><a href="/salir"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cerrar sesión</a></li>
                             </ul>
                         </li>
                     <?php }else{ ?>
