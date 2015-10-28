@@ -111,6 +111,10 @@
 			require 'controladores/requests.php';
 			RequestController::completar();
 			break;
+		case 'GET | email':
+			require 'controladores/email.php';
+			EmailController::enviar();
+			break;
 		default:
 			$vista = '404.php';
 			break;

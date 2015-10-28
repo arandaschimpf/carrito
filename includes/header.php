@@ -20,18 +20,10 @@
         
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <form class="navbar-form navbar-left form-inline" role="search">
-                    <div class="form-group row">
-                        <div class="col-xs-9">
-                            <input type="text" class="form-control" name="producto" placeholder="Producto">                            
-                        </div>
-                        <div class="col-xs-3">
-                            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>                            
-                        </div>
-
-                    </div>
-                </form>
                 <ul class="nav navbar-nav navbar-right">
+                    <?php if($ruta != 'GET | /'){ ?>
+                        <li><a href="/">Volver al inicio</a></li>
+                    <?php } ?>
                     <?php if(isset($logged)){ ?>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php if($logged->rol == 1){ ?><span class="label label-info">Admin</span><?php } ?> <?= $logged->name ?> <b class="caret"></b></a>

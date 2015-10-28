@@ -32,7 +32,7 @@
 
 		public static function update(){
 			$user = R::load('user', $_GET['id']);
-			$user->import($_POST['user'],'name,password');
+			$user->import($_POST['user'],'name,password,email');
 			$id = R::store($user);
 			$_SESSION['flash'] = "Usuario $user->name editado exitosamente";
 			header('Location:/admin/usuarios');
