@@ -21,6 +21,7 @@ RewriteRule ^admin/productos/([0-9]+)$ index.php?page=producto&id=$1
 RewriteRule ^pedidos$ index.php?page=pedidos
 RewriteRule ^pedido/eliminar$ index.php?page=pedido/eliminar
 RewriteRule ^pedido/comprar$ index.php?page=pedido/comprar
+RewriteRule ^email$ index.php?page=email
 
 
 </IfModule>
