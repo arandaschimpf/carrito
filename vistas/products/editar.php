@@ -2,7 +2,7 @@
 <form action="/admin/productos/<?= $product->id ?>" method="POST" role="form" enctype="multipart/form-data">
 	<legend>Editar producto <?= $product->name ?></legend>
 	<div class="row">
-		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+		<div class="col-xs-12 col-sm-3">
 			<?php if($product->imagen){ ?>
 				<a href="#" class="thumbnail">
 					<img src="<?= $product->imagen ?>" alt="Producto">
@@ -13,7 +13,7 @@
 				</div>
 			<?php } ?>	
 		</div>
-		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+		<div class="col-xs-12 col-sm-9">
 			<div class="form-group">
 				<label for="name">Nombre: </label>
 				<input type="text" class="form-control" name="product[name]" id="name" value="<?= $product->name; ?>">

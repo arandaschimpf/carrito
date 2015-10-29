@@ -2,14 +2,14 @@
 	<div class="nav text-center">
 		<ul class="pagination">
 			<% for (var i = 0; i < Math.ceil(size/10); i++) { %>
-				<li class="pag"><a href="#"><%= i+1 %></a></li>
+				<li onclick="window.scope.cambiarPag(<%= i %>);"><a href="#"><%= i+1 %></a></li>
 			<% } %>
-			<li title="Recargar"><a href="#" class="recargar"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a></li>
-			<li title="Eliminar completados"><a href="#" class="eliminarCompletados"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></li>
+			<li title="Recargar"><a href="#" onclick="window.scope.recargar();"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a></li>
+			<li title="Eliminar completados"><a href="#" onclick="window.scope.eliminarCompletados();"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></li>
 		</ul>
 		
 	</div>
-	<form class="agregar">
+	<form class="agregar" onsubmit="window.scope.agregar();">
 		<div class="input-group">
 			<input type="text" name="name" id="inputName" class="form-control" placeholder="Agregar">
 			<div class="input-group-btn">
@@ -19,7 +19,7 @@
 			</div>
 		</div>		
 	</form>
-	<table class='table table-hover'>
+	<table class='table table-striped'>
 		<thead>
 			<tr>
 				<th>Producto</th>
@@ -27,9 +27,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% var templatePedido = _.template($('#templatePedido').html()); %>
 			<% _.each(lista, function(element, index, lis){ %>
-				<% print(templatePedido({element: element, user: user})); %>
+				<% print(tmpP({element: element, user: user, index: index})); %>
 			<% }); %>
 		</tbody>
 	</table>

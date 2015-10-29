@@ -1,6 +1,6 @@
 <?php if(isset($logged)){?>
 	<div id="app">
-		<h2>Cargando datos...</h2>
+		<h2 class="text-center">Cargando datos...</h2>
 	</div>
 	<?php $js[] = "/cdn/js/app.js"; ?>
     <script>
