@@ -1,0 +1,8 @@
+<h2>Lista del super</h2>
+<a href='http://carrito.esy.es'>Ir a la aplicacion</a>
+<hr>
+<ul>
+	<% foreach($lista as $producto){ %>
+		<li><%= $producto->name %></li>
+	<% } %>
+</ul>
